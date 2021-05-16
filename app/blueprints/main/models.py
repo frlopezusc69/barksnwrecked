@@ -37,13 +37,10 @@ class Product(db.Model):
     description = db.Column(db.String(100), nullable=False)
     image = db.Column(db.String(100), nullable=False)
     quantity = db.Column(db.Integer, nullable=False)
-    regular_price = db.Column(db.decimal)
-    discounted_price = db.Column(db.decimal)
-    product_rating = db.Column(db.Decimal)
-    product_review = db.Column(db.String(100), nullable=True)
+    price = db.Column(db.decimal)
     
     def __repr__(self):
-        return f"Product('{self.productid}','{self.product_name}', '{self.description}', '{self.image}', '{self.quantity}', '{self.regular_price}', '{self.discounted_price}')"
+        return f"Product('{self.productid}','{self.product_name}', '{self.description}', '{self.image}', '{self.quantity}', '{self.price}')"
 # class ProductCategory(db.Model):
 #     category_id = db.Column(db.Integer, db.ForeignKey('category.categoryid)'), nullable=False, primary_key=True)
 #     product_id = db.Column(db.Integer, db.ForeignKey('product.product_id'))
