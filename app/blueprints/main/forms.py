@@ -2,16 +2,11 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
 from wtforms.validators import DataRequired, Email, EqualTo
 
-class UserInfoForm(FlaskForm):
-    username = StringField('Username', validators = [DataRequired()])
-    email = StringField('Email', validators = [DataRequired(), Email()])
-    password = PasswordField('Password', validators=[DataRequired()])
-    confirm_pass = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')])
-    phone = StringField('Phone Number', validators = [DataRequired()])
-    submit = SubmitField()
+class CategoryForm(FlaskForm):
+    pass
 
-class LoginForm(FlaskForm):
-    username = StringField('Username', validators=[DataRequired()])
-    password = PasswordField('Password', validators=[DataRequired()])
-    remember_me = BooleanField('Remember Me')
-    submit = SubmitField()
+class ProductForm(FlaskForm):
+    pass
+
+class checkoutForm(FlaskForm):
+    pass
