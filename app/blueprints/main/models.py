@@ -44,13 +44,13 @@ class Product(db.Model):
     
     def __repr__(self):
         return f"Product('{self.productid}','{self.product_name}', '{self.description}', '{self.image}', '{self.quantity}', '{self.regular_price}', '{self.discounted_price}')"
-class ProductCategory(db.Model):
-    category_id = db.Column(db.Integer, db.ForeignKey('category.categoryid)'), nullable=False, primary_key=True)
-    product_id = db.Column(db.Integer, db.ForeignKey('product.product_id'))
-    created_on = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+# class ProductCategory(db.Model):
+#     category_id = db.Column(db.Integer, db.ForeignKey('category.categoryid)'), nullable=False, primary_key=True)
+#     product_id = db.Column(db.Integer, db.ForeignKey('product.product_id'))
+#     created_on = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     
-    def __repr__(self):
-        return f"Product('{self.category_id}', '{self.product_id}')"
+    # def __repr__(self):
+    #     return f"Product('{self.category_id}', '{self.product_id}')"
     
 class Cart(db.Model):
     userid = db.Column(db.Integer, db.ForeignKey('user.userid'), nullable=False, primary_key=True)
